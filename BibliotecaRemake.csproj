@@ -98,6 +98,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucConsultar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucConsultar.Designer.cs">
+      <DependentUpon>ucConsultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDevolver.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDevolver.Designer.cs">
+      <DependentUpon>ucDevolver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucEmprestar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEmprestar.Designer.cs">
+      <DependentUpon>ucEmprestar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucPrincipal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPrincipal.Designer.cs">
+      <DependentUpon>ucPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +155,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ucConsultar.resx">
+      <DependentUpon>ucConsultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDevolver.resx">
+      <DependentUpon>ucDevolver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucEmprestar.resx">
+      <DependentUpon>ucEmprestar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPrincipal.resx">
+      <DependentUpon>ucPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>

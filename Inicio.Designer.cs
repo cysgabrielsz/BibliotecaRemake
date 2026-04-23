@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panelConteudo = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblBiblioteca = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.lblMensagem = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.lblMensagens = new System.Windows.Forms.ListBox();
+            this.lblBiblioteca = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lblLivros = new System.Windows.Forms.ListBox();
             this.panelConteudo.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelConteudo
@@ -53,14 +53,33 @@
             this.panelConteudo.Size = new System.Drawing.Size(725, 476);
             this.panelConteudo.TabIndex = 6;
             // 
-            // panel1
+            // lblMensagem
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(145)))), ((int)(((byte)(110)))));
-            this.panel1.Controls.Add(this.lblLivros);
-            this.panel1.Location = new System.Drawing.Point(365, 126);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(319, 292);
-            this.panel1.TabIndex = 0;
+            this.lblMensagem.AutoSize = true;
+            this.lblMensagem.Font = new System.Drawing.Font("Segoe UI", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensagem.ForeColor = System.Drawing.Color.White;
+            this.lblMensagem.Location = new System.Drawing.Point(79, 70);
+            this.lblMensagem.Name = "lblMensagem";
+            this.lblMensagem.Size = new System.Drawing.Size(166, 40);
+            this.lblMensagem.TabIndex = 8;
+            this.lblMensagem.Text = "Mensagens";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(145)))), ((int)(((byte)(110)))));
+            this.panel2.Controls.Add(this.lblMensagens);
+            this.panel2.Location = new System.Drawing.Point(23, 126);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(319, 292);
+            this.panel2.TabIndex = 1;
+            // 
+            // lblMensagens
+            // 
+            this.lblMensagens.FormattingEnabled = true;
+            this.lblMensagens.Location = new System.Drawing.Point(3, 7);
+            this.lblMensagens.Name = "lblMensagens";
+            this.lblMensagens.Size = new System.Drawing.Size(313, 277);
+            this.lblMensagens.TabIndex = 0;
             // 
             // lblBiblioteca
             // 
@@ -73,40 +92,21 @@
             this.lblBiblioteca.TabIndex = 7;
             this.lblBiblioteca.Text = "Livros do Momento";
             // 
-            // panel2
+            // panel1
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(145)))), ((int)(((byte)(110)))));
-            this.panel2.Controls.Add(this.lblMensagens);
-            this.panel2.Location = new System.Drawing.Point(23, 126);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(319, 292);
-            this.panel2.TabIndex = 1;
-            // 
-            // lblMensagem
-            // 
-            this.lblMensagem.AutoSize = true;
-            this.lblMensagem.Font = new System.Drawing.Font("Segoe UI", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensagem.ForeColor = System.Drawing.Color.White;
-            this.lblMensagem.Location = new System.Drawing.Point(79, 70);
-            this.lblMensagem.Name = "lblMensagem";
-            this.lblMensagem.Size = new System.Drawing.Size(166, 40);
-            this.lblMensagem.TabIndex = 8;
-            this.lblMensagem.Text = "Mensagens";
-            // 
-            // lblMensagens
-            // 
-            this.lblMensagens.FormattingEnabled = true;
-            this.lblMensagens.Location = new System.Drawing.Point(23, 23);
-            this.lblMensagens.Name = "lblMensagens";
-            this.lblMensagens.Size = new System.Drawing.Size(277, 251);
-            this.lblMensagens.TabIndex = 0;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(145)))), ((int)(((byte)(110)))));
+            this.panel1.Controls.Add(this.lblLivros);
+            this.panel1.Location = new System.Drawing.Point(365, 126);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(319, 292);
+            this.panel1.TabIndex = 0;
             // 
             // lblLivros
             // 
             this.lblLivros.FormattingEnabled = true;
-            this.lblLivros.Location = new System.Drawing.Point(20, 23);
+            this.lblLivros.Location = new System.Drawing.Point(3, 7);
             this.lblLivros.Name = "lblLivros";
-            this.lblLivros.Size = new System.Drawing.Size(277, 251);
+            this.lblLivros.Size = new System.Drawing.Size(313, 277);
             this.lblLivros.TabIndex = 1;
             // 
             // Inicio
@@ -118,8 +118,8 @@
             this.Size = new System.Drawing.Size(725, 476);
             this.panelConteudo.ResumeLayout(false);
             this.panelConteudo.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

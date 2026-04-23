@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbAtivo = new System.Windows.Forms.CheckBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtCargo = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lblCargo = new System.Windows.Forms.Label();
             this.btnRemover = new System.Windows.Forms.Button();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
@@ -42,11 +47,6 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAcoes = new System.Windows.Forms.Button();
             this.btnAjustes = new System.Windows.Forms.Button();
-            this.lblCargo = new System.Windows.Forms.Label();
-            this.txtCargo = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.cbAtivo = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,71 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(722, 475);
             this.panel1.TabIndex = 32;
+            // 
+            // cbAtivo
+            // 
+            this.cbAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAtivo.ForeColor = System.Drawing.Color.White;
+            this.cbAtivo.Location = new System.Drawing.Point(70, 336);
+            this.cbAtivo.Name = "cbAtivo";
+            this.cbAtivo.Size = new System.Drawing.Size(75, 27);
+            this.cbAtivo.TabIndex = 48;
+            this.cbAtivo.Text = "Ativo";
+            this.cbAtivo.UseVisualStyleBackColor = true;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(66, 269);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(52, 20);
+            this.lblEmail.TabIndex = 46;
+            this.lblEmail.Text = "Email:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Depth = 0;
+            this.txtEmail.Hint = "digite o Email...";
+            this.txtEmail.Location = new System.Drawing.Point(70, 292);
+            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(237, 23);
+            this.txtEmail.TabIndex = 47;
+            this.txtEmail.UseSystemPasswordChar = false;
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.Depth = 0;
+            this.txtCargo.Hint = "digite o Cargo...";
+            this.txtCargo.Location = new System.Drawing.Point(70, 243);
+            this.txtCargo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.PasswordChar = '\0';
+            this.txtCargo.SelectedText = "";
+            this.txtCargo.SelectionLength = 0;
+            this.txtCargo.SelectionStart = 0;
+            this.txtCargo.Size = new System.Drawing.Size(237, 23);
+            this.txtCargo.TabIndex = 45;
+            this.txtCargo.UseSystemPasswordChar = false;
+            // 
+            // lblCargo
+            // 
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.BackColor = System.Drawing.Color.Transparent;
+            this.lblCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCargo.ForeColor = System.Drawing.Color.White;
+            this.lblCargo.Location = new System.Drawing.Point(66, 220);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(56, 20);
+            this.lblCargo.TabIndex = 44;
+            this.lblCargo.Text = "Cargo:";
             // 
             // btnRemover
             // 
@@ -235,71 +300,6 @@
             this.btnAjustes.Text = "Cadastrar";
             this.btnAjustes.UseVisualStyleBackColor = false;
             this.btnAjustes.Click += new System.EventHandler(this.btnAjustes_Click);
-            // 
-            // lblCargo
-            // 
-            this.lblCargo.AutoSize = true;
-            this.lblCargo.BackColor = System.Drawing.Color.Transparent;
-            this.lblCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCargo.ForeColor = System.Drawing.Color.White;
-            this.lblCargo.Location = new System.Drawing.Point(66, 220);
-            this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(56, 20);
-            this.lblCargo.TabIndex = 44;
-            this.lblCargo.Text = "Cargo:";
-            // 
-            // txtCargo
-            // 
-            this.txtCargo.Depth = 0;
-            this.txtCargo.Hint = "digite o Cargo...";
-            this.txtCargo.Location = new System.Drawing.Point(70, 243);
-            this.txtCargo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.PasswordChar = '\0';
-            this.txtCargo.SelectedText = "";
-            this.txtCargo.SelectionLength = 0;
-            this.txtCargo.SelectionStart = 0;
-            this.txtCargo.Size = new System.Drawing.Size(237, 23);
-            this.txtCargo.TabIndex = 45;
-            this.txtCargo.UseSystemPasswordChar = false;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(66, 269);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(52, 20);
-            this.lblEmail.TabIndex = 46;
-            this.lblEmail.Text = "Email:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Depth = 0;
-            this.txtEmail.Hint = "digite o Email...";
-            this.txtEmail.Location = new System.Drawing.Point(70, 292);
-            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.SelectedText = "";
-            this.txtEmail.SelectionLength = 0;
-            this.txtEmail.SelectionStart = 0;
-            this.txtEmail.Size = new System.Drawing.Size(237, 23);
-            this.txtEmail.TabIndex = 47;
-            this.txtEmail.UseSystemPasswordChar = false;
-            // 
-            // cbAtivo
-            // 
-            this.cbAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAtivo.ForeColor = System.Drawing.Color.White;
-            this.cbAtivo.Location = new System.Drawing.Point(70, 336);
-            this.cbAtivo.Name = "cbAtivo";
-            this.cbAtivo.Size = new System.Drawing.Size(75, 27);
-            this.cbAtivo.TabIndex = 48;
-            this.cbAtivo.Text = "Ativo";
-            this.cbAtivo.UseVisualStyleBackColor = true;
             // 
             // Funcionarios
             // 

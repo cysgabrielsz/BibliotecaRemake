@@ -17,7 +17,7 @@ namespace BibliotecaRemake
     {
         public Funcionarios()
         {
-            InitializeComponent();
+            InitializeComponent();            
             FuncionariosTableAdapter funcionario = new FuncionariosTableAdapter();
             var dados = from linha in funcionario.GetData()
                         select linha;
@@ -26,6 +26,8 @@ namespace BibliotecaRemake
                 lboFuncionarios.Items.Add(linha);
             }
             AtualizarLista();
+            txtSenha.Visible = false;
+            lblSenha.Visible = false;
         }
 
         private void AtualizarLista()
