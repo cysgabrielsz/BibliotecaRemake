@@ -13,10 +13,20 @@ namespace BibliotecaRemake
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        {    
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Telainicial());
+
+            FormLogin entrando = new FormLogin();
+            entrando.saida = false;
+            Application.Run(entrando); // Sera necessario passar para os formularios
+            if (entrando.saida)
+            {
+                entrando.Dispose();
+                entrando.Close();
+                Application.Run(new Telainicial());
+            }
+                
         }
     }
 }
