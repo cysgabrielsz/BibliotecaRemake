@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnAcoes = new System.Windows.Forms.Button();
+            this.btnAjustes = new System.Windows.Forms.Button();
             this.txtAutor = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
@@ -44,17 +47,12 @@
             this.lboDados = new System.Windows.Forms.ListBox();
             this.txtISBN = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtQuantidade = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btnAjustes = new System.Windows.Forms.Button();
-            this.btnAcoes = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnRemover = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(200)))), ((int)(((byte)(180)))));
-            this.panel1.Controls.Add(this.btnRemover);
             this.panel1.Controls.Add(this.btnLimpar);
             this.panel1.Controls.Add(this.btnAcoes);
             this.panel1.Controls.Add(this.btnAjustes);
@@ -77,6 +75,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(722, 475);
             this.panel1.TabIndex = 30;
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(80)))), ((int)(((byte)(50)))));
+            this.btnLimpar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpar.Location = new System.Drawing.Point(395, 409);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(298, 33);
+            this.btnLimpar.TabIndex = 32;
+            this.btnLimpar.Text = "limpar selecao";
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // btnAcoes
+            // 
+            this.btnAcoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(80)))), ((int)(((byte)(50)))));
+            this.btnAcoes.ForeColor = System.Drawing.Color.White;
+            this.btnAcoes.Location = new System.Drawing.Point(208, 409);
+            this.btnAcoes.Name = "btnAcoes";
+            this.btnAcoes.Size = new System.Drawing.Size(127, 33);
+            this.btnAcoes.TabIndex = 31;
+            this.btnAcoes.Text = "Atualizar lista";
+            this.btnAcoes.UseVisualStyleBackColor = false;
+            this.btnAcoes.Click += new System.EventHandler(this.btnAcoes_Click);
+            // 
+            // btnAjustes
+            // 
+            this.btnAjustes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(80)))), ((int)(((byte)(50)))));
+            this.btnAjustes.ForeColor = System.Drawing.Color.White;
+            this.btnAjustes.Location = new System.Drawing.Point(53, 409);
+            this.btnAjustes.Name = "btnAjustes";
+            this.btnAjustes.Size = new System.Drawing.Size(128, 33);
+            this.btnAjustes.TabIndex = 30;
+            this.btnAjustes.Text = "Cadastrar";
+            this.btnAjustes.UseVisualStyleBackColor = false;
+            this.btnAjustes.Click += new System.EventHandler(this.btnAjustes_Click);
             // 
             // txtAutor
             // 
@@ -271,52 +305,6 @@
             this.txtQuantidade.TabIndex = 19;
             this.txtQuantidade.UseSystemPasswordChar = false;
             // 
-            // btnAjustes
-            // 
-            this.btnAjustes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(80)))), ((int)(((byte)(50)))));
-            this.btnAjustes.ForeColor = System.Drawing.Color.White;
-            this.btnAjustes.Location = new System.Drawing.Point(53, 409);
-            this.btnAjustes.Name = "btnAjustes";
-            this.btnAjustes.Size = new System.Drawing.Size(128, 33);
-            this.btnAjustes.TabIndex = 30;
-            this.btnAjustes.Text = "Cadastrar";
-            this.btnAjustes.UseVisualStyleBackColor = false;
-            this.btnAjustes.Click += new System.EventHandler(this.btnAjustes_Click);
-            // 
-            // btnAcoes
-            // 
-            this.btnAcoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(80)))), ((int)(((byte)(50)))));
-            this.btnAcoes.ForeColor = System.Drawing.Color.White;
-            this.btnAcoes.Location = new System.Drawing.Point(208, 409);
-            this.btnAcoes.Name = "btnAcoes";
-            this.btnAcoes.Size = new System.Drawing.Size(127, 33);
-            this.btnAcoes.TabIndex = 31;
-            this.btnAcoes.Text = "Atualizar lista";
-            this.btnAcoes.UseVisualStyleBackColor = false;
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(80)))), ((int)(((byte)(50)))));
-            this.btnLimpar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpar.Location = new System.Drawing.Point(395, 409);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(146, 33);
-            this.btnLimpar.TabIndex = 32;
-            this.btnLimpar.Text = "limpar selecao";
-            this.btnLimpar.UseVisualStyleBackColor = false;
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(80)))), ((int)(((byte)(50)))));
-            this.btnRemover.ForeColor = System.Drawing.Color.White;
-            this.btnRemover.Location = new System.Drawing.Point(547, 409);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(146, 33);
-            this.btnRemover.TabIndex = 44;
-            this.btnRemover.Text = "Remover";
-            this.btnRemover.UseVisualStyleBackColor = false;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
-            // 
             // Livros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +340,5 @@
         private System.Windows.Forms.Button btnAjustes;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAcoes;
-        private System.Windows.Forms.Button btnRemover;
     }
 }

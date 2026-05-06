@@ -32,25 +32,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cboFuncionarios = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLivros = new System.Windows.Forms.TextBox();
             this.lboLivros = new System.Windows.Forms.ListBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lboUsuarios = new System.Windows.Forms.ListBox();
             this.btnEmprestar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(200)))), ((int)(((byte)(180)))));
+            this.panel1.Controls.Add(this.btnLimpar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cboFuncionarios);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtLivros);
             this.panel1.Controls.Add(this.lboLivros);
             this.panel1.Controls.Add(this.lblPesquisar);
-            this.panel1.Controls.Add(this.txtPesquisa);
+            this.panel1.Controls.Add(this.txtUsuario);
             this.panel1.Controls.Add(this.lboUsuarios);
             this.panel1.Controls.Add(this.btnEmprestar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -92,14 +94,15 @@
             this.label1.TabIndex = 58;
             this.label1.Text = "Procure por um livro:";
             // 
-            // textBox1
+            // txtLivros
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(27, 120);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(298, 23);
-            this.textBox1.TabIndex = 57;
+            this.txtLivros.BackColor = System.Drawing.Color.White;
+            this.txtLivros.Location = new System.Drawing.Point(27, 120);
+            this.txtLivros.Multiline = true;
+            this.txtLivros.Name = "txtLivros";
+            this.txtLivros.Size = new System.Drawing.Size(298, 23);
+            this.txtLivros.TabIndex = 57;
+            this.txtLivros.TextChanged += new System.EventHandler(this.txtLivros_TextChanged);
             // 
             // lboLivros
             // 
@@ -121,14 +124,15 @@
             this.lblPesquisar.TabIndex = 55;
             this.lblPesquisar.Text = "Procure por um usuario:";
             // 
-            // txtPesquisa
+            // txtUsuario
             // 
-            this.txtPesquisa.BackColor = System.Drawing.Color.White;
-            this.txtPesquisa.Location = new System.Drawing.Point(390, 120);
-            this.txtPesquisa.Multiline = true;
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(298, 23);
-            this.txtPesquisa.TabIndex = 54;
+            this.txtUsuario.BackColor = System.Drawing.Color.White;
+            this.txtUsuario.Location = new System.Drawing.Point(390, 120);
+            this.txtUsuario.Multiline = true;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(298, 23);
+            this.txtUsuario.TabIndex = 54;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // lboUsuarios
             // 
@@ -142,13 +146,25 @@
             // 
             this.btnEmprestar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(80)))), ((int)(((byte)(50)))));
             this.btnEmprestar.ForeColor = System.Drawing.Color.White;
-            this.btnEmprestar.Location = new System.Drawing.Point(176, 328);
+            this.btnEmprestar.Location = new System.Drawing.Point(27, 315);
             this.btnEmprestar.Name = "btnEmprestar";
-            this.btnEmprestar.Size = new System.Drawing.Size(351, 33);
+            this.btnEmprestar.Size = new System.Drawing.Size(298, 33);
             this.btnEmprestar.TabIndex = 52;
             this.btnEmprestar.Text = "Emprestar";
             this.btnEmprestar.UseVisualStyleBackColor = false;
             this.btnEmprestar.Click += new System.EventHandler(this.btnEmprestar_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(80)))), ((int)(((byte)(50)))));
+            this.btnLimpar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpar.Location = new System.Drawing.Point(390, 315);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(298, 33);
+            this.btnLimpar.TabIndex = 61;
+            this.btnLimpar.Text = "Limpar Seleção";
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // ucEmprestar
             // 
@@ -169,11 +185,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboFuncionarios;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLivros;
         private System.Windows.Forms.ListBox lboLivros;
         private System.Windows.Forms.Label lblPesquisar;
-        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.ListBox lboUsuarios;
         private System.Windows.Forms.Button btnEmprestar;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }

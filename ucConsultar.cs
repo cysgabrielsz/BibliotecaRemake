@@ -53,18 +53,21 @@ namespace BibliotecaRemake
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
-            if (txtPesquisa.Text == "") return;
-            {
-                RequisicoesTableAdapter dados = new RequisicoesTableAdapter();
-                lboConsulta.Items.AddRange(dados.GetData( ).ToArray());
-                return;
-            }
-
-            RequisicoesTableAdapter requisicoes = new RequisicoesTableAdapter();
             lboConsulta.Items.Clear();
-            lboConsulta.Items.AddRange((from linha in requisicoes.GetData()    
-                                        where requisicoes.ToString().ToLower().Contains(txtPesquisa.Text)
-                                        select linha).ToArray());
+            RequisicoesTableAdapter requisicoes = new RequisicoesTableAdapter();
+            var dados = requisicoes.GetData();
+            if (txtPesquisa.Text == "")
+            {
+                lboConsulta.Items.AddRange(dados.ToArray());
+            }
+            else
+            {
+                var filtrado = (from linha in dados
+                                where linha.ToString().ToLower().Contains(txtPesquisa.Text.ToLower())
+                                select linha).ToArray();
+
+                lboConsulta.Items.AddRange(filtrado);
+            }
         }
     }
 }

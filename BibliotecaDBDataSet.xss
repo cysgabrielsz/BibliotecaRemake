@@ -10,8 +10,8 @@
     <Shape ID="DesignTable:Livros" ZOrder="2" X="392" Y="91" Height="248" Width="254" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
     <Shape ID="DesignTable:Usuarios" ZOrder="5" X="735" Y="119" Height="191" Width="240" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:Requisicoes" ZOrder="7" X="393" Y="379" Height="210" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
-    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="3" X="335" Y="617" Height="67" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="45" />
-    <Shape ID="DesignTable:verificarUsuario" ZOrder="1" X="705" Y="438" Height="96" Width="236" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="46" />
+    <Shape ID="DesignTable:verificarUsuario" ZOrder="1" X="705" Y="429" Height="97" Width="236" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="46" />
+    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="3" X="335" Y="779" Height="49" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="45" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:Usuarios_Requisicoes" ZOrder="4" LineWidth="11">

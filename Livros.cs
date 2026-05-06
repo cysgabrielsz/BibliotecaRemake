@@ -106,6 +106,45 @@ namespace BibliotecaRemake
 
                 }
             }
+            if(txtTitulo.Text == "Atualizar")
+            {
+
+            }
+
+            // ATUALIZAR
+            else if (btnAjustes.Text == "Atualizar")
+            {
+                if (lboDados.SelectedItem == null) return;
+
+                LivrosRow livro = lboDados.SelectedItem as LivrosRow;
+                if (livro == null) return;
+
+                try
+                {
+                    LivrosTableAdapter livros = new LivrosTableAdapter();
+                    livros.Update(
+                        livro.LivroID,
+                        txtTitulo.Text,
+                        txtAutor.Text,
+                        txtGenero.Text,
+                        txtEditora.Text,
+                        txtISBN.Text,
+                        int.Parse(txtQuantidade.Text)
+                    ); LimparElementos();
+
+                    MessageBox.Show("Atualizado com sucesso!");
+
+                    btnAjustes.Text = "Cadastrar";
+
+                    LimparElementos();
+                    AtualizarLista();
+                    lboDados.ClearSelected();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
@@ -127,27 +166,8 @@ namespace BibliotecaRemake
             foreach (var livro in livros) lboDados.Items.Add(livro);
         }
 
-        private void BtnVoltar_Click(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void btnRemover_Click(object sender, EventArgs e)
-        {
-            if (lboDados.SelectedItem == null) return;
-            UsuariosRow usuario = lboDados.SelectedItem as UsuariosRow;
-            if (usuario == null) return;
-            try
-            {
-                UsuariosTableAdapter usuarios = new UsuariosTableAdapter();
-                usuarios.Delete(usuario.UsuarioID);
-                LimparElementos();
-                AtualizarLista();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao remover Livro");
-            }
-        }
+
+
     }
 }

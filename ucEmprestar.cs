@@ -24,8 +24,14 @@ namespace BibliotecaRemake
             {
                 cboFuncionarios.Items.Add(funcionario);
             }
-            cboFuncionarios.SelectedIndex = 0;
+            cboFuncionarios.SelectedIndex = -1;
             //Ate aq
+            AtualizarLista();
+
+        }
+
+        private void AtualizarLista()
+        {
             LivrosTableAdapter livros = new LivrosTableAdapter();
             var obterLivros = from linha in livros.GetData() select linha;
             foreach (var livro in obterLivros)
@@ -61,5 +67,49 @@ namespace BibliotecaRemake
 
         }
 
+        private void txtLivros_TextChanged(object sender, EventArgs e)
+        {
+            TextBox pesquisa = sender as TextBox;
+            if (pesquisa.Text == "")
+            {                
+                return;
+            }
+            lboLivros.ClearSelected();
+
+            lboLivros.Items.Clear();
+            string textoDigitado = txtLivros.Text;
+            LivrosTableAdapter dados = new LivrosTableAdapter();
+            var livros = from linha in dados.GetData()
+                         where linha.Titulo.ToLower().Contains(textoDigitado.ToLower())
+                         select linha;
+            foreach (var livro in livros) lboLivros.Items.Add(livro);
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            TextBox pesquisa = sender as TextBox;
+            if (pesquisa.Text == "") return;
+            lboUsuarios.ClearSelected();
+            lboUsuarios.Items.Clear();
+            string textodigitado = txtUsuario.Text;
+            UsuariosTableAdapter dados = new UsuariosTableAdapter();
+            var usuarios = (from linha in dados.GetData()
+                            where linha.Nome.ToLower().Contains(textodigitado.ToLower()) 
+                            select linha);
+            foreach (var usuario in usuarios) lboUsuarios.Items.Add(usuario);
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            lboLivros.ClearSelected();
+            lboLivros.Items.Clear();
+            lboUsuarios.ClearSelected();
+            lboUsuarios.Items.Clear();
+            cboFuncionarios.SelectedIndex = -1;
+            txtLivros.Text = "";
+            txtUsuario.Text = "";
+            AtualizarLista();
+
+        }
     }
 }

@@ -26,8 +26,7 @@ namespace BibliotecaRemake
                 lboFuncionarios.Items.Add(linha);
             }
             AtualizarLista();
-            txtSenha.Visible = false;
-            lblSenha.Visible = false;
+            
         }
 
         private void AtualizarLista()
@@ -53,6 +52,9 @@ namespace BibliotecaRemake
 
         private void lboFuncionarios_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtSenha.Visible = false;
+            lblSenha.Visible = false;
+
             if (lboFuncionarios.SelectedItem == null) return;
 
             FuncionariosRow funcionario = lboFuncionarios.SelectedItem as FuncionariosRow;
@@ -164,6 +166,8 @@ namespace BibliotecaRemake
             txtPesquisa.Text = "";
             cbAtivo.Checked = false;
             AtualizarLista();
+            txtSenha.Visible = true;
+            lblSenha.Visible = true;
         }
     }
 }
