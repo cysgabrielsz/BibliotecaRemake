@@ -17,6 +17,7 @@ namespace BibliotecaRemake
         public ucConsultar()
         {
             InitializeComponent();
+            // Carrega os dados de requisições na ListBox
             RequisicoesTableAdapter requisicoes = new RequisicoesTableAdapter();
             lboConsulta.Items.AddRange(requisicoes.GetData().ToArray());
         }
@@ -25,23 +26,27 @@ namespace BibliotecaRemake
         {
             RequisicoesRow requisicoes = lboConsulta.SelectedItem as RequisicoesRow;
             if (requisicoes == null) return;
+            // Exibe os detalhes da requisição selecionada
             lblDataDeEmprestimo.Text = requisicoes.DataRequisicao.ToString();
             lblDataDeDevolucao.Text = requisicoes.Devolucao;
 
             lblStatus.Text = requisicoes.Status;
             LivrosTableAdapter livros = new LivrosTableAdapter();
+            // Busca o livro relacionado à requisição
             LivrosRow livro = (from linha in livros.GetData()
                               where linha.LivroID == requisicoes.LivroID
                               select linha).FirstOrDefault();
             if (livro == null) return;
             lblTitulo.Text = livro.Titulo;
             FuncionariosTableAdapter funcionarios = new FuncionariosTableAdapter();
+            // Busca o funcionário relacionado à requisição
             FuncionariosRow funcionario = (from linha in funcionarios.GetData()
                                           where linha.FuncionarioID == requisicoes.FuncionarioID
                                           select linha).FirstOrDefault();
             if (funcionario == null) return;
             lblFuncionario.Text = funcionario.NomeCompleto;
             UsuariosTableAdapter usuarios = new UsuariosTableAdapter();
+            // Busca o usuário relacionado à requisição
             UsuariosRow usuario = (from linha in usuarios.GetData()
                                     where linha.UsuarioID == requisicoes.UsuarioID
                                     select linha).FirstOrDefault();
@@ -53,8 +58,10 @@ namespace BibliotecaRemake
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
+            //limpa o listbox
             lboConsulta.Items.Clear();
             RequisicoesTableAdapter requisicoes = new RequisicoesTableAdapter();
+            // Busca os dados de requisições
             var dados = requisicoes.GetData();
             if (txtPesquisa.Text == "")
             {

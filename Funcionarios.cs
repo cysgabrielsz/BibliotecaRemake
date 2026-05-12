@@ -17,20 +17,14 @@ namespace BibliotecaRemake
     {
         public Funcionarios()
         {
-            InitializeComponent();            
-            FuncionariosTableAdapter funcionario = new FuncionariosTableAdapter();
-            var dados = from linha in funcionario.GetData()
-                        select linha;
-            foreach (var linha in dados)
-            {
-                lboFuncionarios.Items.Add(linha);
-            }
+            InitializeComponent();                        
             AtualizarLista();
             
         }
 
         private void AtualizarLista()
         {
+            //atualiza a lista de funcionarios
             lboFuncionarios.Items.Clear();
             FuncionariosTableAdapter funcionariosDados = new FuncionariosTableAdapter();
             var dados = from linha in funcionariosDados.GetData()
@@ -92,6 +86,7 @@ namespace BibliotecaRemake
 
                 }
             }
+
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)

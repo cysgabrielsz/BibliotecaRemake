@@ -46,58 +46,53 @@ namespace BibliotecaRemake
         private void VoltarTelaPrincipal(object quemchama, EventArgs evento)
         {
             tp.SelectTab(tpTelaPrincipal);
-        }
-
-        private void btnErro_Click(object sender, EventArgs e)
-        {
-            tp.SelectTab(tpErro);
-            
-        }
-
-        private void siticoneCircleButton1_Click(object sender, EventArgs e)
-        {
-            tp.SelectTab(tpTelaPrincipal);
-        }
+        }        
 
         private void btnLivros_Click(object sender, EventArgs e)
         {
+            //abre tela de livros
             Livros livros = new Livros();
             AbrirTela(livros);
         }
 
         private void btnEmprestimos_Click(object sender, EventArgs e)
         {
+            //abre tela de emprestimos
             Requisicao emprestimos = new Requisicao();
             AbrirTela(emprestimos);
         }
 
         private void btnFuncionarios_Click(object sender, EventArgs e)
         {
+            //abre tela de funcionarios
             Funcionarios funcionarios = new Funcionarios();
             AbrirTela(funcionarios);
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
+            //abre tela de usuarios
             Usuarios usuarios = new Usuarios();
             AbrirTela(usuarios);
         }
 
         private void AbrirTela(UserControl tela)
         {
-           
+            //metodo para abrir as telas dentro do panelConteudo, limpando o que tiver antes
             foreach (Control controle in panelConteudo.Controls)
             {
                 controle.Dispose();
             }
             panelConteudo.Controls.Clear();
-
+            
+            //adiciona a nova tela ao panelConteudo
             tela.Dock = DockStyle.Fill;
             panelConteudo.Controls.Add(tela);
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
+            //abre tela de inicio
             Inicio inicio = new Inicio();
             AbrirTela(inicio);
         }

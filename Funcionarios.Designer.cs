@@ -149,7 +149,7 @@
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(146, 33);
             this.btnRemover.TabIndex = 43;
-            this.btnRemover.Text = "Remover";
+            this.btnRemover.Text = "Excluir";
             this.btnRemover.UseVisualStyleBackColor = false;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
@@ -285,7 +285,7 @@
             this.btnAcoes.Name = "btnAcoes";
             this.btnAcoes.Size = new System.Drawing.Size(127, 33);
             this.btnAcoes.TabIndex = 31;
-            this.btnAcoes.Text = "Atualizar lista";
+            this.btnAcoes.Text = "Atualizar";
             this.btnAcoes.UseVisualStyleBackColor = false;
             this.btnAcoes.Click += new System.EventHandler(this.btnAcoes_Click);
             // 

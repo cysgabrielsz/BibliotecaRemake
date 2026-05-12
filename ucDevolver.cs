@@ -22,7 +22,8 @@ namespace BibliotecaRemake
 
         private void AtualizarLista()
         {
-            FuncionariosTableAdapter funcionarios = new FuncionariosTableAdapter();
+            //limpa os itens atuais para evitar duplicação
+            FuncionariosTableAdapter funcionarios = new FuncionariosTableAdapter();            
             var obterFuncionarios = from linha in funcionarios.GetData() select linha;
             foreach (var funcionario in obterFuncionarios)
             {
@@ -43,12 +44,13 @@ namespace BibliotecaRemake
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
+            // Verifica se um funcionário e uma requisição foram selecionados
             if (cboFuncionarios.SelectedIndex == -1 || lboPendencia.SelectedIndex == -1)
             {
                 MessageBox.Show("Selecione uma requisição e um funcionário para processar a devolução.");
                 return;
             }
-
+            // Obtém a requisição e o funcionário selecionados
             RequisicoesRow requisicaoSelecionada = lboPendencia.SelectedItem as RequisicoesRow;
             FuncionariosRow funcionarioSelecionado = cboFuncionarios.SelectedItem as FuncionariosRow;
              if (requisicaoSelecionada == null || funcionarioSelecionado == null) return;

@@ -20,6 +20,7 @@ namespace BibliotecaRemake
             AtualizarLista();
         }
 
+        // Atualiza a ListBox com os livros do banco
         private void AtualizarLista()
         {
             lboDados.Items.Clear();
@@ -30,6 +31,7 @@ namespace BibliotecaRemake
             foreach (LivrosRow dado in dados) lboDados.Items.Add(dado);
         }
 
+        // Limpa os TextBox do formulário       
         private void LimparElementos()
         {
             txtTitulo.Text = "";
@@ -42,14 +44,17 @@ namespace BibliotecaRemake
 
         private void lboDados_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Sai se nada estiver selecionado
             if (lboDados.SelectedItem == null) return;
 
             LivrosRow livro = lboDados.SelectedItem as LivrosRow;
 
             if (livro == null) return;
 
+            // Muda os botões para modo edição
             btnAcoes.Text = "Excluir";
             btnAjustes.Text = "Atualizar";
+            // Preenche os campos com os dados do livro
             txtTitulo.Text = livro.Titulo;
             txtGenero.Text = livro.Genero;
             txtAutor.Text = livro.Autor;
@@ -65,15 +70,20 @@ namespace BibliotecaRemake
                 if (lboDados.SelectedItem == null) return;
                 LivrosRow livro = lboDados.SelectedItem as LivrosRow;
                 if (livro == null) return;
+                // Exclui o livro do banco
                 LivrosTableAdapter livros = new LivrosTableAdapter();
                 livros.Delete(livro.LivroID);
+                // Atualiza a lista e limpa os campos
                 AtualizarLista();
+              
                 LimparElementos();
+
                 btnAcoes.Text = "Atualizar Lista";
                 btnAjustes.Text = "Cadastrar";
             }
         }
 
+        //limpar seleção
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             lboDados.ClearSelected();
@@ -87,6 +97,7 @@ namespace BibliotecaRemake
         {
             if (btnAjustes.Text == "Cadastrar")
             {
+                //dando insert nos itens
                 string titulo = txtTitulo.Text;
                 string genero = txtGenero.Text;
                 string autor = txtAutor.Text;
@@ -149,6 +160,7 @@ namespace BibliotecaRemake
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
+            //pesquisa
             TextBox pesquisa = sender as TextBox;
             if (pesquisa.Text == "")
             {

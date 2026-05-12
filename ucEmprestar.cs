@@ -32,6 +32,7 @@ namespace BibliotecaRemake
 
         private void AtualizarLista()
         {
+            //trazendo os livros e usuarios para os listbox
             LivrosTableAdapter livros = new LivrosTableAdapter();
             var obterLivros = from linha in livros.GetData() select linha;
             foreach (var livro in obterLivros)
@@ -47,15 +48,19 @@ namespace BibliotecaRemake
         }
 
         private void btnEmprestar_Click(object sender, EventArgs e)
+
         {
+            // Verificando se os itens foram selecionados
             LivrosRow livroSelecionado = lboLivros.SelectedItem as LivrosRow;
             UsuariosRow usuarioSelecionado = lboUsuarios.SelectedItem as UsuariosRow;
             FuncionariosRow funcionarioSelecionado = cboFuncionarios.SelectedItem as FuncionariosRow;
 
+            // Verificando se os itens foram selecionados
             if (usuarioSelecionado == null) return;
             else if (funcionarioSelecionado == null) return;
             else if (livroSelecionado == null) return;
 
+            // Realizando o emprestimo
             QueriesTableAdapter consulta = new QueriesTableAdapter();
             consulta.EmprestarLivro(
                 livroSelecionado.LivroID,
@@ -63,12 +68,14 @@ namespace BibliotecaRemake
                 usuarioSelecionado.UsuarioID
 
             );
+            // Limpando as seleções e atualizando as listas
             MessageBox.Show($"O emprestimo fico para ser devolvido no dia {DateTime.Now.AddDays(7)}");
 
         }
 
         private void txtLivros_TextChanged(object sender, EventArgs e)
         {
+            // Verificando se o campo de pesquisa esta vazio
             TextBox pesquisa = sender as TextBox;
             if (pesquisa.Text == "")
             {                
@@ -77,6 +84,7 @@ namespace BibliotecaRemake
             lboLivros.ClearSelected();
 
             lboLivros.Items.Clear();
+            // Realizando a pesquisa
             string textoDigitado = txtLivros.Text;
             LivrosTableAdapter dados = new LivrosTableAdapter();
             var livros = from linha in dados.GetData()
@@ -87,12 +95,14 @@ namespace BibliotecaRemake
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
+            // Verificando se o campo de pesquisa esta vazio
             TextBox pesquisa = sender as TextBox;
             if (pesquisa.Text == "") return;
             lboUsuarios.ClearSelected();
             lboUsuarios.Items.Clear();
             string textodigitado = txtUsuario.Text;
             UsuariosTableAdapter dados = new UsuariosTableAdapter();
+            // Realizando a pesquisa
             var usuarios = (from linha in dados.GetData()
                             where linha.Nome.ToLower().Contains(textodigitado.ToLower()) 
                             select linha);
@@ -101,6 +111,7 @@ namespace BibliotecaRemake
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
+            // Limpando as seleções e os campos de pesquisa
             lboLivros.ClearSelected();
             lboLivros.Items.Clear();
             lboUsuarios.ClearSelected();
